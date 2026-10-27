@@ -56,6 +56,8 @@ jobs:
 
       - name: Build APK with Buildozer
         run: |
+          # استخدام yes مع بيبروني واختيار الموافقة عشان نتجاوز قصة التراخيص بدون إيقاف البناء
+          yes y | buildozer -v android debug || true
           buildozer -v android debug
 
       - name: Upload APK
